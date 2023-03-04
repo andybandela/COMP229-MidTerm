@@ -1,10 +1,11 @@
+//index.js Andy Bandela 301282674 My Favourite Books
 // modules required for routing
-let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
 
 // define the game model
-let book = require('../models/books');
+const book = require('../models/books');
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {

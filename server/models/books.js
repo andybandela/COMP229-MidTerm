@@ -1,9 +1,9 @@
-let mongoose = require('mongoose');
+//books.js Andy Bandela 301282674 My Favourite Books
+const mongoose = require('mongoose');
 
 // create a model class
-let Book = mongoose.Schema({
+const Book = mongoose.Schema({
     Title: String,
-    Description: String,
     Price: Number,
     Author: String,
     Genre: String

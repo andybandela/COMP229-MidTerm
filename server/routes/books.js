@@ -1,11 +1,12 @@
+//books.js Andy Bandela 301282674 My Favourite Books
 // modules required for routing
-let express = require('express');
-let router = express.Router();
-let mongoose = require('mongoose');
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
 const { update } = require('../models/books');
 
 // define the book model
-let book = require('../models/books');
+const book = require('../models/books');
 
 /* GET books List page. READ */
 router.get('/', (req, res, next) => {
@@ -90,14 +91,14 @@ router.post('/:id', async(req, res, next) => {
 
 });
 
-// GET - process the delete by user id
-router.get('/delete/:id', async(req, res, next) => {
+// GET - process the deconste by user id
+router.get('/deconste/:id', async(req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
      *****************/
     try {
-      const deleted = await book.findOneAndDelete({_id:req.params.id});
+      const deconsted = await book.findOneAndDeconste({_id:req.params.id});
       res.redirect('/books');
     } catch (error) {
       console.log(error.message);

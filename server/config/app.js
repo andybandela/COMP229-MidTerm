@@ -1,18 +1,19 @@
+//app.js Andy Bandela 301282674 My Favourite Books
 // moddules for node and express
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 // import "mongoose" - required for DB Access
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // URI
-let DB = require('./db');
+const DB = require('./db');
 
 mongoose.connect(process.env.URI || DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
-let mongoDB = mongoose.connection;
+const mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongoDB.once('open', ()=> {
   console.log("Connected to MongoDB...");
@@ -20,10 +21,10 @@ mongoDB.once('open', ()=> {
 
 
 // define routers
-let index = require('../routes/index'); // top level routes
-let books = require('../routes/books'); // routes for books
+const index = require('../routes/index'); // top level routes
+const books = require('../routes/books'); // routes for books
 
-let app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
