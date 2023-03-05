@@ -91,14 +91,14 @@ router.post('/:id', async(req, res, next) => {
 
 });
 
-// GET - process the deconste by user id
-router.get('/deconste/:id', async(req, res, next) => {
+// GET - process the delete by user id
+router.get('/delete/:id', async(req, res, next) => {
 
     /*****************
      * ADD CODE HERE *
      *****************/
     try {
-      const deconsted = await book.findOneAndDelete({_id:req.params.id});
+      const deleted = await book.findOneAndDelete({_id:req.params.id});
       res.redirect('/books');
     } catch (error) {
       console.log(error.message);
